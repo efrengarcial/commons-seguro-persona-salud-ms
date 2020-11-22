@@ -1,16 +1,20 @@
 package com.segurosbolivar.seguropersonasalud;
 
+import com.segurosbolivar.seguropersonasalud.client.ListasClient;
 import com.segurosbolivar.seguropersonasalud.config.ApplicationProperties;
 
+import com.segurosbolivar.wsdl.listassservice.CatalogoDatosRespType;
 import io.github.jhipster.config.DefaultProfileUtil;
 import io.github.jhipster.config.JHipsterConstants;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
@@ -93,5 +97,18 @@ public class CommonsseguropersonasaludmsApp {
             serverPort,
             contextPath,
             env.getActiveProfiles());
+    }
+
+    @Bean
+    CommandLineRunner lookup(ListasClient listasClient) {
+        return args -> {
+            String country = "Spain";
+
+            if (args.length > 0) {
+                country = args[0];
+            }
+            CatalogoDatosRespType response = listasClient.getCatalogo(country);
+            System.err.println(response);
+        };
     }
 }
