@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.segurosbolivar.seguropersonasalud"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "commonsseguropersonasaludms",
+    "packageName": "com.segurosbolivar.seguropersonasalud",
+    "packageFolder": "com/segurosbolivar/seguropersonasalud",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "no",
+    "devDatabaseType": "no",
+    "prodDatabaseType": "no",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZDZhYzRkODMxOTY4YjgyZTVhNTZkZWNlNzA3YWZhODNjMTlmZTgzODkwODA1ODY0MWNlNDYwZTZkZTYxNWJlYTZjNTQzMzhhZjlhNTdiMzMwNmU5YmZkOWJkYWE4OGYzMjkyYWQ2MTNjNzJhZjhkM2IwZTc1YzAxYWEzMjBlNTQ=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1606048579681,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
