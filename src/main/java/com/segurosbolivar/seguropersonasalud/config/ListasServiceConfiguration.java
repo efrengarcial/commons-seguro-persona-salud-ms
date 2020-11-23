@@ -1,6 +1,6 @@
 package com.segurosbolivar.seguropersonasalud.config;
 
-import com.segurosbolivar.seguropersonasalud.client.ListasClient;
+import com.segurosbolivar.seguropersonasalud.repository.ListasRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
@@ -18,9 +18,9 @@ public class ListasServiceConfiguration {
     }
 
     @Bean
-    public ListasClient listasClient(Jaxb2Marshaller marshaller) {
-        ListasClient client = new ListasClient();
-        client.setDefaultUri("https://ambientepruebas.segurosbolivar.com/SimonWS/ListasService");
+    public ListasRepository listasClient(Jaxb2Marshaller marshaller) {
+        ListasRepository client = new ListasRepository();
+        client.setDefaultUri("http://www.segurosbolivar.com/simon/listas/1.0");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;

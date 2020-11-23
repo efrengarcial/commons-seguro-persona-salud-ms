@@ -1,6 +1,6 @@
 package com.segurosbolivar.seguropersonasalud;
 
-import com.segurosbolivar.seguropersonasalud.client.ListasClient;
+import com.segurosbolivar.seguropersonasalud.repository.ListasRepository;
 import com.segurosbolivar.seguropersonasalud.config.ApplicationProperties;
 
 import com.segurosbolivar.wsdl.listassservice.CatalogoDatosRespType;
@@ -99,16 +99,20 @@ public class CommonsseguropersonasaludmsApp {
             env.getActiveProfiles());
     }
 
-    @Bean
-    CommandLineRunner lookup(ListasClient listasClient) {
+   /* @Bean
+    CommandLineRunner lookup(ListasRepository listasRepository) {
         return args -> {
-            String country = "Spain";
+            String name = "DEDUCIBLE_AUTOS";
+            String param = "3;2014;6403034";
 
             if (args.length > 0) {
-                country = args[0];
+                name = args[0];
             }
-            CatalogoDatosRespType response = listasClient.getCatalogo(country);
+            if (args.length > 1) {
+                param = args[1];
+            }
+            CatalogoDatosRespType response = listasRepository.getCatalogo(name, param);
             System.err.println(response);
         };
-    }
+    }*/
 }
